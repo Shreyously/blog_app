@@ -3,10 +3,11 @@ import { BlogCard } from "../components/BlogCard";
 import { BlogSkeleton } from "../components/BlogSkeleton";
 import { useBlogs } from "../hooks";
 
-const formatDate = (date : Date) => {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+const formatDate = (date: Date) => {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   return new Date(date).toLocaleDateString(undefined, options);
 };
+
 
 export const Blogs = () => {
   const { loading, blogs } = useBlogs();
